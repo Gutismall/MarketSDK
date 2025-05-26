@@ -9,6 +9,7 @@ appcompat = "1.6.1"
 lombok = "1.18.38"
 lombokVersion = "1.18.30"
 marketsdk = "Tag"
+marketsdkVersion = "53a424e83d"
 material = "1.10.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
@@ -22,6 +23,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
 lombok-v11830 = { module = "org.projectlombok:lombok", version.ref = "lombokVersion" }
 marketsdk = { module = "com.github.Gutismall:MarketSDK", version.ref = "marketsdk" }
+marketsdk-v53a424e83d = { module = "com.github.Gutismall:MarketSDK", version.ref = "marketsdkVersion" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
