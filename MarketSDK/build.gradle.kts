@@ -27,6 +27,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    publishing {
+        singleVariant("release")
+    }
 }
 
 dependencies {
@@ -39,4 +42,17 @@ dependencies {
     compileOnly (libs.lombok)
     annotationProcessor (libs.lombok.v11830)
 
+}
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"]) // ✅ required for Android libraries
+
+                groupId = "com.github.Gutismall"
+                artifactId = "MarketSDK"
+                version = "0.0.0.1"
+            }
+        }
+    }
 }
