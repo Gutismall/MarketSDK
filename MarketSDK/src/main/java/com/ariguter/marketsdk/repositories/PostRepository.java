@@ -18,7 +18,7 @@ public class PostRepository {
         this.appId = appId;
     }
 
-    public void getAllPosts(String marketId, Callback<List<PostDTO>> callback) {
+    public List<PostDTO> getAllPosts(String marketId, Callback<List<PostDTO>> callback) {
         api.getAllPosts(appId, marketId).enqueue(new retrofit2.Callback<List<PostDTO>>() {
             @Override
             public void onResponse(@NonNull Call<List<PostDTO>> call, @NonNull Response<List<PostDTO>> response) {
@@ -33,9 +33,10 @@ public class PostRepository {
                 callback.onError(t.getMessage());
             }
         });
+        return null;
     }
 
-    public void getPost(String marketId, String postId, Callback<PostDTO> callback) {
+    public PostDTO getPost(String marketId, String postId, Callback<PostDTO> callback) {
         api.getPost(appId, marketId, postId).enqueue(new retrofit2.Callback<PostDTO>() {
             @Override
             public void onResponse(@NonNull Call<PostDTO> call, @NonNull Response<PostDTO> response) {
@@ -50,6 +51,7 @@ public class PostRepository {
                 callback.onError(t.getMessage());
             }
         });
+        return null;
     }
 
     public void createPost(String marketId, PostDTO dto, Callback<PostDTO> callback) {
@@ -69,12 +71,12 @@ public class PostRepository {
         });
     }
 
-    public void deletePost(String marketId, String postId, Callback<Void> callback) {
+    public Response deletePost(String marketId, String postId, Callback<String> callback) {
         api.deletePost(appId, marketId, postId).enqueue(new retrofit2.Callback<Void>() {
             @Override
             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
                 if (response.isSuccessful()) {
-                    callback.onSuccess(null);
+                    callback.onSuccess("Post deleted successfully");
                 } else {
                     callback.onError("API Error: " + response.code());
                 }
@@ -84,6 +86,7 @@ public class PostRepository {
                 callback.onError(t.getMessage());
             }
         });
+        return null;
     }
 
     public void updatePost(String marketId, String postId, PostDTO dto, Callback<PostDTO> callback) {

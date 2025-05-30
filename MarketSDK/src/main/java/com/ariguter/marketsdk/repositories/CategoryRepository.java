@@ -17,7 +17,7 @@ public class CategoryRepository {
         this.appId = appId;
     }
 
-    public void getAllCategories(String marketId, Callback<List<CategoryDTO>> callback) {
+    public List<CategoryDTO> getAllCategories(String marketId, Callback<List<CategoryDTO>> callback) {
         api.getAllCategories(appId, marketId).enqueue(new retrofit2.Callback<List<CategoryDTO>>() {
             @Override
             public void onResponse(@NonNull Call<List<CategoryDTO>> call, @NonNull Response<List<CategoryDTO>> response) {
@@ -32,9 +32,10 @@ public class CategoryRepository {
                 callback.onError(t.getMessage());
             }
         });
+        return null;
     }
 
-    public void getCategory(String marketId, String categoryId, Callback<CategoryDTO> callback) {
+    public CategoryDTO getCategory(String marketId, String categoryId, Callback<CategoryDTO> callback) {
         api.getCategory(appId, marketId, categoryId).enqueue(new retrofit2.Callback<CategoryDTO>() {
             @Override
             public void onResponse(@NonNull Call<CategoryDTO> call, @NonNull Response<CategoryDTO> response) {
@@ -49,6 +50,7 @@ public class CategoryRepository {
                 callback.onError(t.getMessage());
             }
         });
+        return null;
     }
 
     public void createCategory(String marketId, CategoryDTO dto, Callback<CategoryDTO> callback) {
