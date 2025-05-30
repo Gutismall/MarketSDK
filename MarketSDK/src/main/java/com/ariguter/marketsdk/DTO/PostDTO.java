@@ -1,4 +1,4 @@
-package com.ariguter.marketsdk;
+package com.ariguter.marketsdk.DTO;
 
 import lombok.*;
 

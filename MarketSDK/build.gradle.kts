@@ -41,6 +41,10 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     compileOnly (libs.lombok)
     annotationProcessor (libs.lombok.v11830)
+    implementation(libs.retrofit.v300)
+    implementation(libs.okhttp)
+    implementation (libs.converter.gson)
+    implementation(libs.logging.interceptor)
 
 }
 afterEvaluate {
