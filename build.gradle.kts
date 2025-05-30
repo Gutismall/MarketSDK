@@ -4,4 +4,3 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.android.library) apply false
 }
-val targetCompatibility by extra(17)
