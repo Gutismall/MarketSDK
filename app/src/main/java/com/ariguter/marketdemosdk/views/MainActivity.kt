@@ -1,10 +1,12 @@
- package com.ariguter.marketdemosdk
+package com.ariguter.marketdemosdk.views
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.ariguter.marketdemosdk.R
+import com.ariguter.marketsdk.MarketSDK
 
 
  class MainActivity : AppCompatActivity() {
@@ -18,6 +20,8 @@ import androidx.core.view.WindowInsetsCompat
             insets
         }
         val appId = applicationContext.packageName
+        val marketsdk = MarketSDK(appId)
+
 
     }
 }

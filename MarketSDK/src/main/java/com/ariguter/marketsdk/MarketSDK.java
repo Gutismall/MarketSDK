@@ -8,6 +8,7 @@ import com.ariguter.marketsdk.service.MarketService;
 import com.ariguter.marketsdk.service.PostService;
 
 public class MarketSDK {
+    private static MarketSDK instance;
 
     private final PostService postService;
     private final MarketService marketService;
@@ -21,6 +22,17 @@ public class MarketSDK {
         this.postService = new PostService(new PostRepository(api, appId));
         this.marketService = new MarketService(new MarketRepository(api, appId));
         this.categoryService = new CategoryService(new CategoryRepository(api, appId));
+    }
+    public static synchronized void initialize(String appId) {
+        if (instance == null) {
+            instance = new MarketSDK(appId);
+        }
+    }
+    public static MarketSDK getInstance() {
+        if (instance == null) {
+            throw new IllegalStateException("MarketSDK is not initialized. Call initialize() first.");
+        }
+        return instance;
     }
 
     public PostService getPostService() {
