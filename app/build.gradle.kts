@@ -38,7 +38,7 @@ android {
     }
 }
 dependencies {
-
+    implementation("com.github.Gutismall:MarketSDK:81833ccefd")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

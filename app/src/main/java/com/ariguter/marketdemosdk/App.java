@@ -9,7 +9,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         String appId = getPackageName();
-        MarketSDK.initialize(appId);
+//        MarketSDK.initialize(appId);
     }
 
 }
