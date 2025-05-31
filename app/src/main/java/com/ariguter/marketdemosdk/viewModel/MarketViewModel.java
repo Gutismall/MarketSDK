@@ -19,6 +19,6 @@ public class MarketViewModel extends ViewModel {
     public void loadPosts() {
         // Example: synchronous fetch, replace with async if needed
 //        List<PostDTO> data = repository.getPosts();
-        posts.setValue(data);
+//        posts.setValue(data);
     }
 }
