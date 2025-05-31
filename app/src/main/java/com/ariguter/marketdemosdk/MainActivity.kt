@@ -17,5 +17,7 @@ import androidx.core.view.WindowInsetsCompat
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val appId = applicationContext.packageName
+
     }
 }
