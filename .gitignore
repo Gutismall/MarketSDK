@@ -1,29 +1,4 @@
-# Root-level
-.idea/
-*.iml
-.DS_Store
-*.log
-
-# Ignore entire MarketSDK project
-MarketSDK/
-
-# Spring Boot API
-API/target/
-
-# Next.js Dashboard
-Dashboard/node_modules/
-Dashboard/.next/
-Dashboard/.env*
-
-# Android App - MyApplication
-MyApplication/.gradle/
-MyApplication/.idea/
-MyApplication/local.properties
-MyApplication/build/
-MyApplication/**/*.iml
-MyApplication/.cxx/
-MyApplication/.externalNativeBuild/
-
-# OS-generated
-Thumbs.db
-desktop.ini
+/MarketSDK
+/API
+/Dashboard
+/MyApplication

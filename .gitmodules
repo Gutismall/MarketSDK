@@ -1,6 +1,6 @@
 [submodule "MarketSDK"]
 	path = MarketSDK
-	url = https://github.com/Gutismall/MarketSDK.git
+	url = https://github.com/Gutismall/Market-Android-Library.git
 [submodule "Market-Dashboard"]
 	path = Market-Dashboard
 	url = https://github.com/Gutismall/Market-Dashboard.git
