@@ -61,6 +61,8 @@ jobs:
 
       - name: Apply Terraform (Provision AWS Infra)
         working-directory: ./terraform
+        env:
+          TF_LOG: INFO
         run: |
           terraform apply -auto-approve \
             -var="db_name=${{ secrets.RDS_DB_NAME }}" \
