@@ -36,6 +36,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-north-1
 
+      - name: Show contents of MarketAPI folder
+        run: ls -la ./MarketAPI
+
       - name: Make Gradle executable
         run: chmod +x ./MarketAPI/gradlew
 
