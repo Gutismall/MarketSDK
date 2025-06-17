@@ -1,15 +1,15 @@
+[submodule "API"]
+  path = API
+  url = https://github.com/Gutismall/MarketAPI.git
+
+[submodule "Dashboard"]
+  path = Dashboard
+  url = https://github.com/Gutismall/Market-Dashboard.git
+
 [submodule "MarketSDK"]
-	path = MarketSDK
-	url = https://github.com/Gutismall/Market-Android-Library.git
-[submodule "Market-Dashboard"]
-	path = Market-Dashboard
-	url = https://github.com/Gutismall/Market-Dashboard.git
-[submodule "Market-Demo-Appliction"]
-	path = Market-Demo-Appliction
-	url = https://github.com/Gutismall/Market-Demo-Appliction.git
-[submodule "MarketAPI"]
-	path = MarketAPI
-	url = https://github.com/Gutismall/MarketAPI.git
-[submodule "Market-Android-Library"]
-	path = Market-Android-Library
-	url = https://github.com/Gutismall/Market-Android-Library.git
+  path = MarketSDK
+  url = https://github.com/Gutismall/Market-Android-Library.git
+
+[submodule "MyApplication"]
+  path = MyApplication
+  url = https://github.com/Gutismall/Market-Demo-Appliction.git
