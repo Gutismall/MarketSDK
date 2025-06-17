@@ -50,6 +50,11 @@ jobs:
       - name: Upload JAR to S3
         run: aws s3 cp ./MarketAPI/build/libs/*.jar s3://${{ secrets.S3_BUCKET_NAME }}/application.jar
 
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.7
+
       - name: Initialize Terraform
         working-directory: ./terraform
         run: terraform init
