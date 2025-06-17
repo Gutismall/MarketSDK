@@ -1,0 +1,59 @@
+name: Deploy Spring Boot with Terraform
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      RDS_DB_NAME: ${{ secrets.RDS_DB_NAME }}
+      RDS_PASSWORD: ${{ secrets.RDS_PASSWORD }}
+      RDS_PORT: ${{ secrets.RDS_PORT }}
+      RDS_USERNAME: ${{ secrets.RDS_USERNAME }}
+      S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+      SPRING_APP_PORT: ${{ secrets.SPRING_APP_PORT }}
+
+    steps:
+      - name: Checkout repository with submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: MarketAPI
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-north-1
+
+      - name: Build Spring Boot application
+        working-directory: ./MarketAPI
+        run: ./gradlew bootJar
+
+      - name: Upload JAR to S3
+        run: aws s3 cp ./MarketAPI/build/libs/*.jar s3://${{ secrets.S3_BUCKET_NAME }}/application.jar
+
+      - name: Initialize Terraform
+        working-directory: ./terraform
+        run: terraform init
+
+      - name: Apply Terraform (Provision AWS Infra)
+        working-directory: ./terraform
+        run: |
+          terraform apply -auto-approve \
+            -var="db_name=${{ secrets.RDS_DB_NAME }}" \
+            -var="db_username=${{ secrets.RDS_USERNAME }}" \
+            -var="db_password=${{ secrets.RDS_PASSWORD }}" \
+            -var="rds_port=${{ secrets.RDS_PORT }}" \
+            -var="s3_bucket_name=${{ secrets.S3_BUCKET_NAME }}" \
+            -var="spring_app_port=${{ secrets.SPRING_APP_PORT }}"
