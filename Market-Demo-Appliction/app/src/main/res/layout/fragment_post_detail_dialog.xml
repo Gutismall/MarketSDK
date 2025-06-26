@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/postDialogFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    tools:context=".views.fragments.PostDetailDialogFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/postDialogFragment_imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/man" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@id/postDialogFragment_closeButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postDialogFragment_imageView"
+        app:layout_constraintVertical_weight="1">
+
+        <!-- Add your content here -->
+
+        <TextView
+            android:id="@+id/postDialogFragment_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="title"
+            android:textSize="50dp"
+            android:layout_weight="2"/>
+
+        <TextView
+            android:id="@+id/postDialogFragment_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="description"
+            android:textSize="20dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/postDialogFragment_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="price"
+            android:textSize="20dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/postDialogFragment_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="country"
+            android:textSize="20dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/postDialogFragment_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="city"
+            android:textSize="20dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/postDialogFragment_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="date"
+            android:textSize="20dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/postDialogFragment_closeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="close"
+        android:textSize="20dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

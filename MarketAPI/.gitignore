@@ -1,0 +1,49 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# Build output
+/target/
+/build/
+/deploy/
+**/build/
+
+# Logs
+*.log
+
+# Dependency caches
+.gradle/
+!gradle/
+
+# Maven
+.mvn/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Java class files
+*.class
+
+# Compiled packages
+*.jar
+*.war
+*.ear
+
+# DB, temp, and system files
+*.db
+*.swp
+*.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Optional: include .env files if not used for secrets
+# .env
+
+# Keep properties file if needed
+!**/src/main/resources/
+!**/src/test/resources/

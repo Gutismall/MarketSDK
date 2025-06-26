@@ -1,0 +1,30 @@
+# Ignore IntelliJ project files
+.idea/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore compiled Java classes and build artifacts
+**/build/
+**/out/
+
+# Ignore Gradle cache and wrapper logs
+.gradle/
+**/gradle-app.setting
+**/gradlew.bat
+**/gradlew
+
+# Ignore log files
+*.log
+
+# Ignore local environment files (optional)
+*.env
+.env.*
+
+# Ignore node_modules in Dashboard (Next.js)
+Dashboard/node_modules/
+
+# Ignore package lock files if you prefer yarn (optional)
+Dashboard/package-lock.json
+
+# Ignore all the submodules — their code is tracked separately

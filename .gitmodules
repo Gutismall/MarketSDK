@@ -1,0 +1,3 @@
+[submodule "Market-Android-Library"]
+	path = Market-Android-Library
+	url = https://github.com/Gutismall/Market-Android-Library.git
