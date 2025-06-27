@@ -29,14 +29,9 @@ Ensure you have the following installed:
 
 ### Installation
 
-1. Clone the repository:
-
-   ```bash
-   git clone (https://github.com/Gutismall/Market-Dashboard.git)
-   cd Dashboard
-   ```
-
-2. Install dependencies:
+1. Download the repository
+2. Open in VSCode IDE (or other javascrips IDE)
+3. Install dependencies:
    ```bash
    npm install
    # or
